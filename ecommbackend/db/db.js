@@ -3,9 +3,9 @@ const mongoose = require('mongoose')
 // P1pSutPNiRngj468
 const MongooseUri = `mongodb+srv://navneetshahi2004:P1pSutPNiRngj468@cluster123.uy6np.mongodb.net/?retryWrites=true&w=majority&appName=Cluster123`
 
-const mongooseConnect=()=>{
+const mongooseConnect=async()=>{
     // console.log(process.env.MONGOOSEURI)
-    mongoose.connect(MongooseUri)
+    await mongoose.connect(MongooseUri)
     let db = mongoose.connection
     db.on('error',()=>console.log("Some Error in connecting database"))
     db.once('open',()=>console.log("Database connected"))
