@@ -51,7 +51,7 @@ const Ecomstate = ({children}) => {
     const registerUser = async(name,email,password,type)=>{
         try{
 
-            const res = await fetch('https://ecommerce-backend-six-theta.vercel.app/auth/register',{
+            const res = await fetch('https://ecommercebackendnavnee.vercel.app//auth/register',{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json"
@@ -76,7 +76,7 @@ const Ecomstate = ({children}) => {
     const checkotp = async(otp,email)=>{
         try{
 
-            const res = await fetch("https://ecommerce-backend-six-theta.vercel.app/auth/checkotp",{
+            const res = await fetch("https://ecommercebackendnavnee.vercel.app//auth/checkotp",{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json"
@@ -102,7 +102,7 @@ const Ecomstate = ({children}) => {
     const authlogin = async(email,password)=>{
         try{
             
-            const res = await fetch("https://ecommerce-backend-six-theta.vercel.app/auth/login",{
+            const res = await fetch("https://ecommercebackendnavnee.vercel.app//auth/login",{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json"
@@ -140,7 +140,7 @@ const Ecomstate = ({children}) => {
             images:images
         })
 
-        const {data} = await axios.post('https://ecommerce-backend-six-theta.vercel.app/admin/addproduct',data1,config)
+        const {data} = await axios.post('https://ecommercebackendnavnee.vercel.app//admin/addproduct',data1,config)
 
         return data
     }
@@ -153,7 +153,7 @@ const Ecomstate = ({children}) => {
                 }
             }
         
-            await axios.get('https://ecommerce-backend-six-theta.vercel.app/admin/allproduct',config).then(response=>{
+            await axios.get('https://ecommercebackendnavnee.vercel.app//admin/allproduct',config).then(response=>{
                 console.log("Product fetched:-> ",response.data)
                 setAllproducts(response.data)
     
@@ -186,7 +186,7 @@ const Ecomstate = ({children}) => {
                 property:productproperty
             }
 
-            const {data} = await axios.post('https://ecommerce-backend-six-theta.vercel.app/admin/updateproduct',productup,config)
+            const {data} = await axios.post('https://ecommercebackendnavnee.vercel.app//admin/updateproduct',productup,config)
 
             return data
 
@@ -205,7 +205,7 @@ const Ecomstate = ({children}) => {
                 }
             }
 
-            const {data} = await axios.post('https://ecommerce-backend-six-theta.vercel.app/admin/deleteproduct',{id},config)
+            const {data} = await axios.post('https://ecommercebackendnavnee.vercel.app//admin/deleteproduct',{id},config)
             return data
             
         } catch (error) {
@@ -223,7 +223,7 @@ const Ecomstate = ({children}) => {
                 }
             }
 
-            const {data} = await axios.post('https://ecommerce-backend-six-theta.vercel.app/admin/categoryCreation',{catename:name,parent:parentCate,properties:properties.map(p=>({name:p.name,values:p.values.split(',')}))},config)
+            const {data} = await axios.post('https://ecommercebackendnavnee.vercel.app//admin/categoryCreation',{catename:name,parent:parentCate,properties:properties.map(p=>({name:p.name,values:p.values.split(',')}))},config)
 
             return data
 
@@ -242,7 +242,7 @@ const Ecomstate = ({children}) => {
                 }
             }
     
-            const {data}= await axios.get('https://ecommerce-backend-six-theta.vercel.app/admin/categoryshow',config)
+            const {data}= await axios.get('https://ecommercebackendnavnee.vercel.app//admin/categoryshow',config)
     
             setAllcate(data)
 
@@ -260,7 +260,7 @@ const Ecomstate = ({children}) => {
                 }
             }
     
-            const {data} = await axios.post('https://ecommerce-backend-six-theta.vercel.app/admin/categoryUpdate',{cateId:id,name,parent,properties:properties.map(p=>({name:p.name,values:p.values.split(',')}))},config)
+            const {data} = await axios.post('https://ecommercebackendnavnee.vercel.app//admin/categoryUpdate',{cateId:id,name,parent,properties:properties.map(p=>({name:p.name,values:p.values.split(',')}))},config)
     
             return data
 
@@ -278,7 +278,7 @@ const Ecomstate = ({children}) => {
                 }
             }
     
-            const {data} = await axios.post('https://ecommerce-backend-six-theta.vercel.app/admin/categorydelete',{id:id},config)
+            const {data} = await axios.post('https://ecommercebackendnavnee.vercel.app//admin/categorydelete',{id:id},config)
     
             return data
         }catch(err){
@@ -299,7 +299,7 @@ const Ecomstate = ({children}) => {
             currentid:id
         }
 
-        const {data} = await axios.post('https://ecommerce-backend-six-theta.vercel.app/admin/setFeatured',body,config)
+        const {data} = await axios.post('https://ecommercebackendnavnee.vercel.app//admin/setFeatured',body,config)
 
         return data
     }
@@ -314,7 +314,7 @@ const Ecomstate = ({children}) => {
                 }
             }
     
-            const {data} = await axios.get('https://ecommerce-backend-six-theta.vercel.app/admin/getFeatured',config)
+            const {data} = await axios.get('https://ecommercebackendnavnee.vercel.app//admin/getFeatured',config)
             
             if(data.msg === "No product featured"){
                 console.log(data.msg)
@@ -337,7 +337,7 @@ const Ecomstate = ({children}) => {
                 }
             }
     
-            const {data} = await axios.get('https://ecommerce-backend-six-theta.vercel.app/admin/Getorders',config)
+            const {data} = await axios.get('https://ecommercebackendnavnee.vercel.app//admin/Getorders',config)
     
             setorders(data)
         }catch(err){
@@ -356,7 +356,7 @@ const Ecomstate = ({children}) => {
             }
         }
 
-        const {data} = await axios.get('https://ecommerce-backend-six-theta.vercel.app/admin/alluser',config)
+        const {data} = await axios.get('https://ecommercebackendnavnee.vercel.app//admin/alluser',config)
         console.log(data)
 
         setallUser(data)
@@ -371,7 +371,7 @@ const Ecomstate = ({children}) => {
 
         const pro = await removeDuplicates(productid)
         
-        const res = await fetch(`https://ecommerce-backend-six-theta.vercel.app/user/productfind`,{
+        const res = await fetch(`https://ecommercebackendnavnee.vercel.app//user/productfind`,{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
