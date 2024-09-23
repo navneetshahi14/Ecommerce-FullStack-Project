@@ -53,6 +53,7 @@ const Ecomstate = ({children}) => {
 
             const res = await fetch('https://ecommercebackendnavnee.vercel.app//auth/register',{
                 method:"POST",
+                mode:"no-cors",
                 headers:{
                     "Content-Type":"application/json"
                 },
