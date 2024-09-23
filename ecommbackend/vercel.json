@@ -13,7 +13,7 @@
     }
   ],
   "functions": {
-    "/db/db.js": {
+    "index.js": {
       "maxDuration": 30
     }
   }
