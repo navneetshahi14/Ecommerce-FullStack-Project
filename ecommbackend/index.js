@@ -34,7 +34,6 @@ app.use('/user',UserRouter)
 const payment = require('./routes/paymentroutes')
 app.use('/payment',payment)
 
-app.get('/',(req,res)=>{res.send("server started")})
 
 
 app.listen(process.env.PORT,()=>console.log("Server Started"))
