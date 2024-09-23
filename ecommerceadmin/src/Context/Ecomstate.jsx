@@ -53,7 +53,6 @@ const Ecomstate = ({children}) => {
 
             const res = await fetch('https://ecommerce-backend-six-theta.vercel.app/auth/register',{
                 method:"POST",
-                mode: 'no-cors',
                 headers:{
                     "Content-Type":"application/json"
                 },
@@ -79,7 +78,6 @@ const Ecomstate = ({children}) => {
 
             const res = await fetch("https://ecommerce-backend-six-theta.vercel.app/auth/checkotp",{
                 method:"POST",
-                mode: 'no-cors',
                 headers:{
                     "Content-Type":"application/json"
                 },
@@ -106,7 +104,6 @@ const Ecomstate = ({children}) => {
             
             const res = await fetch("https://ecommerce-backend-six-theta.vercel.app/auth/login",{
                 method:"POST",
-                mode: 'no-cors',
                 headers:{
                     "Content-Type":"application/json"
                 },
@@ -376,7 +373,6 @@ const Ecomstate = ({children}) => {
         
         const res = await fetch(`https://ecommerce-backend-six-theta.vercel.app/user/productfind`,{
             method:"POST",
-            mode: 'no-cors',
             headers:{
                 "Content-Type":"application/json"
             },
