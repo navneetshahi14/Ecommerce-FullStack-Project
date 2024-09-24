@@ -10,9 +10,15 @@ dotenv.config()
 db()
 
 app.use(cors({
-    origin:"https://ecommerce-admin-smoky-phi.vercel.app",
+    origin:"https://ecommerce-adminav.vercel.app",
     methods:["POST","GET"],
     credentials:true
+},{
+    {
+    origin:"https://ecommerce-usern.vercel.app/",
+    methods:["POST","GET"],
+    credentials:true
+}
 }))
 app.use(bodyparser.json())
 app.use(express.json())
