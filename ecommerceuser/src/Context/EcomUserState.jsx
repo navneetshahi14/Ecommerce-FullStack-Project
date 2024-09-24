@@ -22,7 +22,7 @@ const EcomUserState = ({children}) => {
 
 
     const handlePayment =async(userId,receipt,amount)=>{
-        const {data} = await axios.post('https://ecommercebackendnavnee.vercel.app//payment/createOrder',{
+        const {data} = await axios.post('https://ecommerce-backennavd.vercel.app/payment/createOrder',{
             amount:amount,
             currency:"INR",
             receipt:receipt,
@@ -38,7 +38,7 @@ const EcomUserState = ({children}) => {
             description:"Test transaction",
             order_id:data.id,
             handler:async (response) =>{
-                const verifyUrl = 'https://ecommercebackendnavnee.vercel.app//payment/verifyPayment'
+                const verifyUrl = 'https://ecommerce-backennavd.vercel.app/payment/verifyPayment'
 
                 const verificationData={
                     razorpay_order_id:response.razorpay_order_id,
@@ -94,7 +94,7 @@ const EcomUserState = ({children}) => {
 
     const getProducts = async()=>{
         try{
-            const data = await fetch('https://ecommercebackendnavnee.vercel.app//user/allProduct',{
+            const data = await fetch('https://ecommerce-backennavd.vercel.app/user/allProduct',{
                 method:"GET",
                 mode: 'no-cors',
                 headers:{
@@ -114,7 +114,7 @@ const EcomUserState = ({children}) => {
 
     const getnewProducts = async()=>{
         try{
-            const data = await fetch("https://ecommercebackendnavnee.vercel.app//user/newProduct",{
+            const data = await fetch("https://ecommerce-backennavd.vercel.app/user/newProduct",{
                 method:"GET",
                 mode: 'no-cors',
                 headers:{
@@ -135,7 +135,7 @@ const EcomUserState = ({children}) => {
 
     const allProduct = async() =>{
         try{
-            const data = await fetch("https://ecommercebackendnavnee.vercel.app//user/allProduct",{
+            const data = await fetch("https://ecommerce-backennavd.vercel.app/user/allProduct",{
                 method:"GET",
                 mode: 'no-cors',
                 headers:{
@@ -153,7 +153,7 @@ const EcomUserState = ({children}) => {
 
     const getfeatured = async()=>{
         try{
-            const data = await fetch("https://ecommercebackendnavnee.vercel.app//user/getFeatured",{
+            const data = await fetch("https://ecommerce-backennavd.vercel.app/user/getFeatured",{
                 method:"GET",
                 mode: 'no-cors',
                 headers:{
@@ -175,7 +175,7 @@ const EcomUserState = ({children}) => {
 
     const cartProducts = async() =>{
         try{
-            const data = await fetch('https://ecommercebackendnavnee.vercel.app//user/cartproduct',{
+            const data = await fetch('https://ecommerce-backennavd.vercel.app/user/cartproduct',{
                 method:"POST",
                 mode: 'no-cors',
                 headers:{
@@ -237,7 +237,7 @@ const EcomUserState = ({children}) => {
         
         try{
 
-            const data = await fetch('https://ecommercebackendnavnee.vercel.app//user/addingaddress',{
+            const data = await fetch('https://ecommerce-backennavd.vercel.app/user/addingaddress',{
                 method:"POST",
                 mode: 'no-cors',
                 headers:{
@@ -270,7 +270,7 @@ const EcomUserState = ({children}) => {
             let length = localStorage.getItem('userId').length
             let userid = localStorage.getItem('userId').substring(1,length-1)
     
-            const res = await fetch(`https://ecommercebackendnavnee.vercel.app//user/viewsdetails/${usersId}`,{
+            const res = await fetch(`https://ecommerce-backennavd.vercel.app/user/viewsdetails/${usersId}`,{
                 method:"GET",
                 mode: 'no-cors',
                 headers:{
@@ -293,7 +293,7 @@ const EcomUserState = ({children}) => {
 
     const productshowcase = async(productid) =>{
         try{
-            const res = await fetch(`https://ecommercebackendnavnee.vercel.app//user/product/${productid}`,{
+            const res = await fetch(`https://ecommerce-backennavd.vercel.app/user/product/${productid}`,{
                 method:"GET",
                 mode: 'no-cors',
                 headers:{
@@ -314,7 +314,7 @@ const EcomUserState = ({children}) => {
 
     const findorders = async() =>{
         try{
-            const res = await fetch(`https://ecommercebackendnavnee.vercel.app//user/order/${usersId}`,{
+            const res = await fetch(`https://ecommerce-backennavd.vercel.app/user/order/${usersId}`,{
                 method:"GET",
                 mode: 'no-cors',
                 headers:{
@@ -342,7 +342,7 @@ const EcomUserState = ({children}) => {
 
             const pro = await removeDuplicates(productid)
             console.log(pro)
-            const res = await fetch(`https://ecommercebackendnavnee.vercel.app//user/productfind`,{
+            const res = await fetch(`https://ecommerce-backennavd.vercel.app/user/productfind`,{
                 method:"POST",
                 mode: 'no-cors',
                 headers:{
