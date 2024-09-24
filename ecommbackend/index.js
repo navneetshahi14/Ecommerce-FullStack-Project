@@ -14,7 +14,6 @@ app.use(cors({
     methods:["POST","GET"],
     credentials:true
 },{
-    {
     origin:"https://ecommerce-usern.vercel.app/",
     methods:["POST","GET"],
     credentials:true
